@@ -6,7 +6,9 @@
 <body>
 	<div th:include="fragments/header::header"></div>
 	<div th:include="fragments/footer::footer"></div>
-	<h2 style="margin-left: 40%">Registro de emprestimos</h2>
+	
+	<div class="container" >
+	 <h2 style="margin-left: 40%">Registro de emprestimos</h2>
 
 	<table id="emprestimos" class="table table-dark">
 		<thead>
@@ -33,7 +35,7 @@
 	<br>
 	<br>
 	<a th:href="@{/}" style="margin-left: 40%">Voltar</a>
-
+</div>
 </body>
 </html>
 

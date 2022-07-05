@@ -1,0 +1,37 @@
+p {
+    font-family: sans-serif;
+     background-color: yellow;
+}
+
+body {
+  height: 100vh;
+}/*
+body {
+  height: 100vh;
+}
+html, body {
+    margin: 0;
+    height: 100%;
+}
+ html {
+   margin: 0px;
+   height: 100%;
+   width: 100%;
+}
+
+body {
+   margin: 0px;
+   min-height: 100%;
+   width: 100%;
+}
+ 
+html {
+   
+    min-height: 100%;
+    margin: 0;
+}
+body {
+    min-height: 100%;
+    margin: 0;
+}
+*/
