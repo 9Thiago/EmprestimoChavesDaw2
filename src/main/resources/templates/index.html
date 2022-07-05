@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layouts/default">
+<body>
+	<div th:include="fragments/header::header"></div>
+	
+	<div id="page" layout:fragment="content" style="margin-left: 40%" >
+		
+		<br> <a th:href="@{criarConta}"><button style="color:blue">Criar conta</button></a><br><br>
+		<a th:href="@{menuDeChaves}"><button style="color:green">Pegar ou devolver uma chave</button></a> <br>	
+		<br> <a th:href="@{novaChave}"><button style="color:orange">Gestão de chaves</button></a></br>
+		<br> <a th:href="@{gestaoUsuario}"><button style="color:orange">Gestão de Usuarios</button></a><br>
+		<br> <a th:href="@{emprestimos}"><button style="color:purple">Registro de emprestimos</button></a><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>	
+	
+	</div>
+	
+		<table STYLE="margin-left: 31%; margin-top: 5%">
+		<thead>
+		  <tr >
+            <th  style="color:blue">AREA VISITANTE |</th>
+           <th style="color:orange">AREA ADMIN |</th>
+            <th  style="color:green">AREA SERVIDOR(USUARIO)</th>
+            <th style="color:purple"> | AREA ADMIN ou USUARIO</th>
+        </tr></table>
+	<div th:include="fragments/footer::footer"></div>
+</body>
+</html>

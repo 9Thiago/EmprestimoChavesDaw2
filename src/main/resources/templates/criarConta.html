@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+	<div th:include="fragments/header::header"></div>
+	<div th:include="fragments/footer::footer"></div>
+
+
+	<form th:action="@{criarConta}" th:object="${usuario}" method="post"
+		style="margin-left: 40%">
+		<p>
+			<label for="nome">Nome</label> <input type="text"
+				th:field="*{username}">
+		</p>
+		<p>
+			<label for="email">Email</label> <input type="text"
+				th:field="*{email}">
+		</p>
+		<p>
+			<label for="password">Password</label> <input type="password"
+				th:field="*{password}">
+		</p>
+		<!-- <div th:each="papel: ${allroles}" th:object="${papel}"> -->
+			<select name="roles" >
+				<option  value=1>ADMIN</option>
+				<option  value=2>USUARIO</option>
+			</select><br>
+			<!-- 
+			<input type="checkbox" th:value="${papel.id}" th:object="${papel}"></input>
+			<label  th:text="${papel.name}">Texto checkbox 1</label> -->
+		<!-- </div> -->
+		<br> <input type="submit" value="Cadastrar">
+	</form>
+	<br>
+	<br>
+	<a th:href="@{/}" style="margin-left: 40%">Voltar</a>
+
+</body>
+</html>

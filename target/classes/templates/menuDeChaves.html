@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+	<div th:include="fragments/header::header"></div>
+	<div th:include="fragments/footer::footer"></div>
+	<h2 style="margin-left: 40%">Chaves Livres</h2>
+	<table id="tchaves" style="border: 5px solid green; margin-left:40%">
+		<tbody>
+			<form th:action="@{menuDeChaves}" method="post"
+				th:each="livre : ${livres}">
+				<input type="hidden" th:value="${livre.chave_id}" name="chave_id">
+				<!-- <input type="hidden" th:value="" name="username">
+				 -->
+			<tr>
+				<td>Sala<td>
+				<td th:text="${livre.nomechave}" style="border: 1px solid"></td>
+				<td>---</td>
+				<td><button style="background-color: green" type="submit">Pegar</button>
+			</tr>
+			</form>
+		</tbody>
+	</table>
+
+	<h2 style="margin-left: 40%">Chaves Pegas</h2>
+		<table id="tchaves" style="border: 5px solid green; margin-left:40%">
+			<tbody>
+				<form th:action="@{menuDeChaves}" method="post"  th:each="pega : ${pegas}">
+					<input type="hidden" th:value="${pega.chave_id}" name="chave_id">
+				<tr>
+					<td>Sala</td>
+					<td th:text="${pega.nomechave}" style="border: 1px solid"></td>
+					<td>---</td>
+					<td><button style="background-color: red" type="submit">Devolver</button>
+				</tr>
+				</form>
+			</tbody>
+		</table>
+	<br><br><a th:href="@{/}" style="margin-left: 40%">Voltar</a>
+</body>
+</html>
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Gestao de Usuarios</title>
+</head>
+<body>
+	<div th:include="fragments/header::header"></div>
+	<div th:include="fragments/footer::footer"></div>
+	<h2 style="margin-left: 40%">Funcionarios Cadastrados</h2>
+	<table id="usuarios"  style="border: 5px solid green; margin-left: 40%" >
+    <thead>
+        <tr >
+            <th  style="border: 1px solid"> Funcionario </th>
+            <th  style="border: 1px solid"> Email</th>
+        </tr>
+    </thead>
+    <tbody >
+    <div th:each="usuariod : ${usuarios}" th:object="${usuariod}">
+    <form th:action="@{gestaoUsuario}" method="post">
+    <input type="hidden" th:value="*{id}" name="id">
+        <tr >
+            <td th:text="${usuariod.username}"  style="border: 1px solid"></td>
+            <td th:text="${usuariod.email}"  style="border: 1px solid"></td>
+            <td><button type="submit">Deletar usuario</button>
+         </tr>
+         </form></div>
+    </tbody>
+</table>
+	
+	<br><br><a th:href="@{/}" style="margin-left: 40%">Voltar</a>
+	
+
+</body>
+</html>
+

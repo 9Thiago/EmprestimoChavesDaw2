@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+	<div th:include="fragments/header::header"></div>
+	<div th:include="fragments/footer::footer"></div>
+
+	<form th:action="@{novaChave}" th:object="${chave}" method="post"
+		style="margin-left: 40%">
+		<p>
+			<label for="nome">Nome da chave</label> <input type="text"
+				th:field="*{nomechave}">
+		</p>
+		<input type="submit" value="Cadastrar">
+	</form>
+	<br>
+	<br>
+	<p style="margin-left: 35%">---------------------------------------------------------------------------------------</p>
+	<br>
+	<br><h3 style="margin-left: 40%"> Chaves cadastradas</h3>
+	<table id="tabchaves" style="border: 5px solid green; margin-left: 40%">
+		<tbody>
+			<div th:each="chaved : ${listachaves}" th:object="${chaved}">
+				<form th:action="@{deletarChave}" method="get">
+					<input type="hidden" th:value="*{chave_id}" name="chave_id">
+			<tr>
+				<td>Sala
+				<td>
+				<td th:text="${chaved.nomechave}" style="border: 1px solid"
+					th:object="${chave}"></td>
+				<td>---</td>
+				<td><button style="background-color: orange" type="submit">Deletar</button>
+			</tr>
+			</form>
+			</div>
+		</tbody>
+	</table>
+	<br>
+	<br>
+	<a th:href="@{/}" style="margin-left: 40%">Voltar</a>
+</body>
+</html>
