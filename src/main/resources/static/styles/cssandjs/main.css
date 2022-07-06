@@ -1,7 +1,13 @@
 p {
     font-family: sans-serif;
-     background-color: yellow;
+    color:blue;
+} 
+.ativa{
+font-size:30px;
+	font-family: gothic;
+	color:red;
 }
+
 
 body {
   height: 100vh;

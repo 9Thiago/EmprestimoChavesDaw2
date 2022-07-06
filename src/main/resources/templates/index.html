@@ -6,9 +6,8 @@
 <script	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
  <link th:href="@{/styles/cssandjs/main.css}" rel="stylesheet" />
 <body >
-	<div class="container">
-		<div th:include="fragments/header::header"></div>
-
+	<div th:include="fragments/header::header"></div>
+		<div class="container">
 		<div id="page" layout:fragment="content" style="margin-left: 40%">
 
 			<br> <a th:href="@{criarConta}"><button style="color: blue">Criar
@@ -18,11 +17,11 @@
 			<br> <a th:href="@{novaChave}"><button style="color: orange">Gestão
 					de chaves</button></a></br> <br> <a th:href="@{gestaoUsuario}"><button
 					style="color: orange">Gestão de Usuarios</button></a><br> <br>
-			<a th:href="@{emprestimos}"><button style="color: purple">Registro
+				<a th:href="@{emprestimosp}"><button style="color: purple">Registro
 					de emprestimos</button></a>
 		</div>
-		<p>se tiver amarelo pegou css </p>
-		<div style="margin-left:15%; padding-top:32%">
+		
+		<div style="margin-left:18%; padding-top:6%">
 			<table >
 				<thead>
 					<tr>
@@ -34,7 +33,6 @@
 				</thead>
 				
 			</table>
-			
 		</div>
 	</div>
 	<div th:include="fragments/footer::footer"></div>
